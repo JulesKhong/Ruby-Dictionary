@@ -5,6 +5,7 @@ class Dictionary
   attr_reader( :word, :definition)
 
   @@dictionary_list = []
+  @@words = []
 
   define_method(:initialize) do | attributes |
     @word = attributes.fetch(:word)
@@ -32,6 +33,13 @@ class Dictionary
   define_singleton_method(:clear) do
     @@dictionary_list = []
   end
+
+#   define_singleton_method(:all_words) do
+#     @@dictionary_list.each() do |dictionary_entry|
+# binding.pry
+#       @@words.push(dictionary_entry.values_at(:word))
+#     end
+#   end
 
 # # LET'S THINK THROUGH THIS AFTER LUNCH
 #   define_method(:add) do |new_definition|

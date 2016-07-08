@@ -3,5 +3,17 @@
 <h3>Browse the terms below, or add your own</h3>
 
 <ul>
-  <li></li>
+  <% @words.each() do |entry|%>
+  <li><%= entry %></li>
+  <% end %>
 </ul>
+
+<div class="entry_form">
+  <form class="form-group" action="/" method="post">
+    <label for="word_input">Enter a word or phrase</label>
+    <input type="text" name="word_input" class="form-control">
+    <label for="definition_input">Definition</label>
+    <textarea class="form-control" name="definition_input" rows="3"></textarea>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>

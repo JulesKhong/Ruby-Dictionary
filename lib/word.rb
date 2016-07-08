@@ -1,5 +1,4 @@
 require('pry')
-require('dictionary')
 
 class Word
   @@words = []
