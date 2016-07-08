@@ -35,4 +35,18 @@ describe(Dictionary) do
     end
   end
 
+  # describe('#add') do
+  #   it('adds an additional definition to a word') do
+  #     test_word = Dictionary.new({ :word => "liquid sunshine", :definition => "Not sunshine"})
+  #   end
+  # end
+
+  # describe('.all_words') do
+  #   it('returns a list of all defined words') do
+  #     test_word = Dictionary.new({ :word => "liquid sunshine", :definition => "Not sunshine"})
+  #     test_word2 = Dictionary.new({ :word => "pour over", :definition => "sweet sweet nectar of the gods"})
+  #     expect(Dictionary.all_words()).to(eq(["liquid sunshine", "pour over"]))
+  #   end
+  # end
+
 end
