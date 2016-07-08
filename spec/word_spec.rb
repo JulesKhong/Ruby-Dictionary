@@ -3,6 +3,10 @@ require('rspec')
 require('pry')
 
 describe Word do
+  before() do
+    Word.clear()
+  end
+  
   describe('#initialize') do
     it('takes a word, and returns that word') do
     new_word = Word.new("Timbers Army")
@@ -12,11 +16,11 @@ describe Word do
 
   describe('.all_words') do
     it('returns a list of all words in the dictionary') do
-      new_word = Word.new("Timbers Army")
-      new_word2 = Word.new("Rubinator")
+      new_word = Word.new({ :word_input => "Timbers Army"})
+      new_word2 = Word.new({ :word_input => "Rubinator"})
       new_word.save()
       new_word2.save()
-      expect(Word.all_words()).to(eq(["Timbers Army", "Rubinator"]))
+      expect(Word.all_words()).to(eq([new_word, new_word2]))
     end
   end
 #

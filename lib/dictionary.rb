@@ -5,7 +5,7 @@ class Dictionary
   attr_reader( :word, :definition)
 
   @@dictionary_list = []
-  @@words = []
+  # @@words = []
 
   define_method(:initialize) do | attributes |
     @word = attributes.fetch(:word)

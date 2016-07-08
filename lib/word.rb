@@ -1,22 +1,29 @@
 require('pry')
 
 class Word
+
+  attr_reader(:word_input)
+
   @@words = []
 
-  define_method(:initialize) do |word|
-    @word = word
+  define_method(:initialize) do |input|
+    @word_input = input
   end
 
   define_method(:word) do
-    @word
+    @word_input
   end
 
   define_method(:save) do
-    @@words.push(self.word())
+    @@words.push(self)
   end
 
   define_singleton_method(:all_words) do
     @@words
+  end
+
+  define_singleton_method(:clear) do
+    @@words = []
   end
 
 end

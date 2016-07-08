@@ -1,10 +1,11 @@
+
 <h1>Northwest Dictionary</h1>
 
 <h3>Browse the terms below, or add your own</h3>
 
 <ul>
-  <% @words.each() do |entry|%>
-  <li><%= entry %></li>
+  <% @all_words.each() do |word|%>
+  <li><%= word.word() %></li>
   <% end %>
 </ul>
 
