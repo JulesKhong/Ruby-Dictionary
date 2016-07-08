@@ -1,12 +1,12 @@
-
 <h1>Northwest Dictionary</h1>
 
 <h3>Browse the terms below, or add your own</h3>
 
 <ul>
   <% @all_words.each() do |word|%>
-  <li><%= word.word() %></li>
+  <li class="word"><a href="/"><%= word.word() %></a></li>
   <% end %>
+  <%= @definition %>
 </ul>
 
 <div class="entry_form">

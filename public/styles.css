@@ -1,0 +1,7 @@
+.definition {
+  display: none;
+}
+
+.word:hover + .definition {
+  display: block;
+}

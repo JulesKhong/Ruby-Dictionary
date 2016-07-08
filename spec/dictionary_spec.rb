@@ -3,6 +3,10 @@ require('dictionary')
 require('pry')
 
 describe(Dictionary) do
+  before() do
+    Dictionary.clear()
+  end
+
   describe('#initialize') do
     it('takes a word, and returns that word')do
       test_word = Dictionary.new({ :word => "liquid sunshine", :definition => ["Not sunshine"]})
@@ -34,7 +38,6 @@ describe(Dictionary) do
       expect(Dictionary.find("swoosh life")).to(eq(["I work all the time, but my company makes me think it's cool"]))
     end
   end
-
 
 
   # describe('#add') do

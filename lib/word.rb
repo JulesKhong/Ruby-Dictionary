@@ -8,6 +8,7 @@ class Word
 
   define_method(:initialize) do |input|
     @word_input = input
+    @id = @@words.length().+(1)
   end
 
   define_method(:word) do
@@ -24,6 +25,10 @@ class Word
 
   define_singleton_method(:clear) do
     @@words = []
+  end
+
+  define_singleton_method(:id) do
+    @id
   end
 
 end
