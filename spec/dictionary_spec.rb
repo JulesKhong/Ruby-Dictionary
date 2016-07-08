@@ -35,14 +35,14 @@ describe(Dictionary) do
     end
   end
 
-  describe('#add') do
-    it('adds an additional definition to a word') do
-      # Dictionary.clear()
-      test_word = Dictionary.new({ :word => "liquid sunshine", :definition => ["Not sunshine"]})
-      test_comparison = Dictionary.new({:word => "liquid sunshine", :definition => ["Not sunshine", "definitely rain"]})
-      expect(test_word.add("liquid sunshine", "definitely rain")).to(eq(test_comparison))
-    end
-  end
+  # describe('#add') do
+  #   it('adds an additional definition to a word') do
+  #     # Dictionary.clear()
+  #     test_word = Dictionary.new({ :word => "liquid sunshine", :definition => ["Not sunshine"]})
+  #     test_comparison = Dictionary.new({:word => "liquid sunshine", :definition => ["Not sunshine", "definitely rain"]})
+  #     expect(test_word.add(["liquid sunshine", "definitely rain"])).to(eq(test_comparison))
+  #   end
+  # end
 
   # describe('.all_words') do
   #   it('returns a list of all defined words') do

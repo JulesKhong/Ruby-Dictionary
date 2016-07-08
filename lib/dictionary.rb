@@ -33,25 +33,16 @@ class Dictionary
     @@dictionary_list = []
   end
 
-# LET'S THINK THROUGH THIS AFTER LUNCH
-  define_method(:add) do |word, new_definition|
-    new_entry = {}
-    @@dictionary_list.each() do |entry|
-      if word = entry.word()
-        new_entry = Dictionary.new({ :word => word, :definition => entry.definition().push(new_definition)})
-      end
-    end
-    @@dictionary_list.each() do |entry|
-      if new_entry.word() == entry.word()
-      entry.definition() == new_entry.definition()
-      end
-    end
-binding.pry()
+# # LET'S THINK THROUGH THIS AFTER LUNCH
+#   define_method(:add) do |new_definition|
+#     word = new_definition.shift()
+#     definition= new_definition.pop()
+#     rejected = @@dictionary_list.shift()
+#     @@dictionary_list.each() do
+#       if word = self.word()
+#       self.definition().push(definition)
+#       self
+#       end
+#     end
+#   end
 end
-end
-  # define_singleton_method(:all_words) do
-  #   @@words.clear()
-  #   (Dictionary.all()).each() do |dictionary_entry|
-  #     @@words.push(dictionary_entry.word())
-  #   end
-  # end
