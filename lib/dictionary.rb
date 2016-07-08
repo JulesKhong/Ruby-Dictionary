@@ -29,11 +29,29 @@ class Dictionary
     found_definition
   end
 
+  define_singleton_method(:clear) do
+    @@dictionary_list = []
+  end
+
+# LET'S THINK THROUGH THIS AFTER LUNCH
+  define_method(:add) do |word, new_definition|
+    new_entry = {}
+    @@dictionary_list.each() do |entry|
+      if word = entry.word()
+        new_entry = Dictionary.new({ :word => word, :definition => entry.definition().push(new_definition)})
+      end
+    end
+    @@dictionary_list.each() do |entry|
+      if new_entry.word() == entry.word()
+      entry.definition() == new_entry.definition()
+      end
+    end
+binding.pry()
+end
+end
   # define_singleton_method(:all_words) do
   #   @@words.clear()
   #   (Dictionary.all()).each() do |dictionary_entry|
   #     @@words.push(dictionary_entry.word())
   #   end
   # end
-
-end
