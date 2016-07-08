@@ -10,11 +10,12 @@ class Dictionary
     @definition = attributes.fetch(:definition)
   end
 
-  define_method(:all) do
+  define_singleton_method(:all) do
     @@words
   end
 
-  define_method(:save) do
+  define_method(:save) do 
     @@words.push(self)
   end
+
 end
