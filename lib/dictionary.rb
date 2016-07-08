@@ -14,8 +14,18 @@ class Dictionary
     @@words
   end
 
-  define_method(:save) do 
+  define_method(:save) do
     @@words.push(self)
+  end
+
+  define_singleton_method(:find) do |search_word|
+    found_definition = nil
+    @@words.each() do |dictionary_entry|
+      if dictionary_entry.word() == search_word
+        found_definition = dictionary_entry.definition()
+      end
+    end
+    found_definition
   end
 
 end

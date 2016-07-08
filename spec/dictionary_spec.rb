@@ -25,4 +25,14 @@ describe(Dictionary) do
     end
   end
 
+  describe('.find') do
+    it('returns a definition for a word') do
+      test_word = Dictionary.new({ :word => "liquid sunshine", :definition => "Not sunshine"})
+      test_word.save()
+      test_word2 = Dictionary.new({ :word => "swoosh life", :definition => "I work all the time, but my company makes me think it's cool"})
+      test_word2.save()
+      expect(Dictionary.find("swoosh life")).to(eq("I work all the time, but my company makes me think it's cool"))
+    end
+  end
+
 end
