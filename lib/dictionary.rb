@@ -10,6 +10,7 @@ class Dictionary
   define_method(:initialize) do | attributes |
     @word = attributes.fetch(:word)
     @definition = attributes.fetch(:definition)
+    @id = @@dictionary_list.length().+(1)
   end
 
   define_singleton_method(:all) do
@@ -20,19 +21,24 @@ class Dictionary
     @@dictionary_list.push(self)
   end
 
-  define_singleton_method(:find) do |search_word|
-    found_definition = nil
-    @@dictionary_list.each() do |dictionary_entry|
-      if dictionary_entry.word() == search_word
-        found_definition = dictionary_entry.definition()
-      end
-    end
-    found_definition
+  define_method(:id) do
+    @id
   end
 
   define_singleton_method(:clear) do
     @@dictionary_list = []
   end
+
+  define_singleton_method(:find) do |id|
+    found_definition = nil
+    @@dictionary_list.each() do |dictionary_entry|
+      if dictionary_entry.id().eql?(id)
+      found_definition = dictionary_entry
+      end
+    end
+    found_definition
+  end
+
 
 #   define_singleton_method(:all_words) do
 #     @@dictionary_list.each() do |dictionary_entry|

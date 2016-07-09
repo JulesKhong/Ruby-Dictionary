@@ -15,8 +15,16 @@ describe(Dictionary) do
     end
   end
 
+  describe('#id') do
+    it('returns the id of the word/definition pair') do
+      test_entry = Dictionary.new({ :word => "fog", :definition => ["another word for the sky"]})
+      test_entry.save
+      expect(test_entry.id()).to(eq(1))
+    end
+  end
+
   describe('.all') do
-    it('returns an empty array for all words') do
+    it('returns an empty array for all words at first') do
       expect(Dictionary.all()).to(eq([]))
     end
   end
@@ -35,7 +43,7 @@ describe(Dictionary) do
       test_word.save()
       test_word2 = Dictionary.new({ :word => "swoosh life", :definition => ["I work all the time, but my company makes me think it's cool"]})
       test_word2.save()
-      expect(Dictionary.find("swoosh life")).to(eq(["I work all the time, but my company makes me think it's cool"]))
+      expect(Dictionary.find(test_word.id())).to(eq(test_word))
     end
   end
 

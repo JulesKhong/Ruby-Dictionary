@@ -10,13 +10,15 @@ get('/') do
   erb(:index)
 end
 
-post('/') do
+post('/definition') do
   word = params.fetch('word_input')
   definition = params.fetch('definition_input')
-  word_entry = Word.new(word)
-  word_entry.save()
-  definition_entry = Dictionary.new({:word => word, :definition => definition})
-  definition_entry.save()
-  # @all_words = Word.all_words()
-  erb(:index)
+  dictionary_entry = Dictionary.new({:word => word, :definition => definition})
+  dictionary_entry.save()
+  erb(:success)
+end
+
+get('/definition/:id') do
+  @definition = Dictionary.find(params.fetch("id").to_i())
+  erb(:vehicle)
 end
