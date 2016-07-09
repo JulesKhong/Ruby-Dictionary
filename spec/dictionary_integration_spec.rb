@@ -10,14 +10,12 @@ describe('loads the home page',{ :type => :feature }) do
   end
 end
 
-# describe('shows definitions',{ :type => :feature }) do
-#   it("shows the definition for each word") do
-#     visit('/')
-#     fill_in('word_input', :with => 'good vibes')
-#     fill_in('definition_input', :with => 'the equivalent of grandma prayers')
-#     click_button('Submit')
-#     expect(page).to have_content('good vibes')
-#     click_link('good vibes')
-#     expect(page).to have_content('the equivalent of grandma prayers')
-#   end
-# end
+describe('shows definitions',{ :type => :feature }) do
+  it("shows the definition for each word") do
+    visit('/')
+    fill_in('word_input', :with => 'good vibes')
+    fill_in('definition_input', :with => 'the equivalent of grandma prayers')
+    click_button('Submit')
+    expect(page).to have_content('See all entries')
+  end
+end

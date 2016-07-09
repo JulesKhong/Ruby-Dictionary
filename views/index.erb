@@ -4,9 +4,8 @@
 
 <ul>
   <% @all_words.each() do |word|%>
-  <li class="word"><a href="/"><%= word.word() %></a></li>
+  <li><a href="/definition/<%= word.id() %>"><%= word.word() %></a></li>
   <% end %>
-  <%= @definition %>
 </ul>
 
 <div class="entry_form">

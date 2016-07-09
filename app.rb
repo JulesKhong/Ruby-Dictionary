@@ -20,5 +20,6 @@ end
 
 get('/definition/:id') do
   @definition = Dictionary.find(params.fetch("id").to_i())
-  erb(:vehicle)
+  @word = @dictionary.word()
+  erb(:definition)
 end
