@@ -39,14 +39,14 @@ class Dictionary
     found_definition
   end
 
-  define_singleton_method(:find_word)do |definition|
-    found_word = nil
+  define_singleton_method(:find_word)do |word|
+    found_definition = nil
     @@dictionary_list.each() do |dictionary_entry|
-      if dictionary_entry.definition().eql?(definition)
-        found_word = dictionary_entry.word()
+      if dictionary_entry.word().eql?(word)
+        found_definition = dictionary_entry
       end
     end
-    found_word
+    found_definition
   end
 
   define_method(:add_definition) do |new_definition|
