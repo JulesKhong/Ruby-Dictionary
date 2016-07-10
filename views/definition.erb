@@ -1,4 +1,21 @@
 <h1>Northwest Dictionary</h1>
 
-<h3><%= @word %></h3>
-<h2><%= @definition.definition() %></h2>
+<!-- <h3><%= @word %></h3> -->
+<h2><%= @definition.word() %>:</h2>
+<%= @definition.definition().class() %>
+<% @definition.definition().each() do |meaning|%>
+<h2><%= meaning %></h2>
+<% end %>
+
+
+<p>
+  <a href="/">See all entries</a>
+</p>
+
+<div class="entry_form">
+  <form class="form-group" action="/definition/new" method="post">
+    <label for="new_definition_input">Additional Definition</label>
+    <textarea class="form-control" name="new_definition_input" rows="3"></textarea>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>

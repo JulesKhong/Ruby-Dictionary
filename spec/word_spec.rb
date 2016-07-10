@@ -6,7 +6,7 @@ describe Word do
   before() do
     Word.clear()
   end
-  
+
   describe('#initialize') do
     it('takes a word, and returns that word') do
     new_word = Word.new("Timbers Army")
@@ -23,13 +23,5 @@ describe Word do
       expect(Word.all_words()).to(eq([new_word, new_word2]))
     end
   end
-#
-#   describe('.save') do
-#     it('saves a new word to the list of words') do
-#       new_word = Word.new("Timbers Army")
-#       new_word.save()
-#       expect(Word.all_words()).to(eq["Timbers Army"])
-#     end
-#   end
 
 end

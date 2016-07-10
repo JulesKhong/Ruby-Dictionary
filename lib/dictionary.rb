@@ -39,24 +39,19 @@ class Dictionary
     found_definition
   end
 
+  define_singleton_method(:find_word)do |definition|
+    found_word = nil
+    @@dictionary_list.each() do |dictionary_entry|
+      if dictionary_entry.definition().eql?(definition)
+        found_word = dictionary_entry.word()
+      end
+    end
+    found_word
+  end
 
-#   define_singleton_method(:all_words) do
-#     @@dictionary_list.each() do |dictionary_entry|
-# binding.pry
-#       @@words.push(dictionary_entry.values_at(:word))
-#     end
-#   end
+  define_method(:add_definition) do |new_definition|
+    self.definition().push(new_definition)
+    self
+    end
 
-# # LET'S THINK THROUGH THIS AFTER LUNCH
-#   define_method(:add) do |new_definition|
-#     word = new_definition.shift()
-#     definition= new_definition.pop()
-#     rejected = @@dictionary_list.shift()
-#     @@dictionary_list.each() do
-#       if word = self.word()
-#       self.definition().push(definition)
-#       self
-#       end
-#     end
-#   end
 end

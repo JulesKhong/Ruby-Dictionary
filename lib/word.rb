@@ -8,6 +8,11 @@ class Word
 
   define_method(:initialize) do |input|
     @word_input = input
+    @id = @@words.length().+(1)
+  end
+
+  define_method(:id) do
+    @id
   end
 
   define_method(:word) do
