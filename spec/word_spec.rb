@@ -1,7 +1,7 @@
 require('rspec')
 require('word')
+require('definition')
 require('pry')
-require('dictionary')
 
 describe(Word) do
   before() do
@@ -15,15 +15,16 @@ describe(Word) do
       expect(test_word.definition()).to eq(["Not sunshine"])
     end
   end
-  #
-  # describe('#id') do
-  #   it('returns the id of the word/definition pair') do
-  #     test_entry = Dictionary.new({ :word => "fog", :definition => ["another word for the sky"]})
-  #     test_entry.save
-  #     expect(test_entry.id()).to(eq(1))
-  #   end
-  # end
-  #
+
+  describe('#id') do
+    it('returns the id of the instance of the word object') do
+      definition = Definition.new({:definition => "another name for the sky"})
+      test_entry = Word.new({ :word => "fog", :definition => definition})
+      test_entry.save
+      expect(test_entry.id()).to(eq(1))
+    end
+  end
+
   # describe('.all') do
   #   it('returns an empty array for all words at first') do
   #     expect(Dictionary.all()).to(eq([]))

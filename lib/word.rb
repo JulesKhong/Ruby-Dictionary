@@ -1,7 +1,7 @@
 require('pry')
 
 class Word
-  attr_reader( :word, :definition)
+  attr_reader( :id, :word, :definition)
 
   @@words = []
 
