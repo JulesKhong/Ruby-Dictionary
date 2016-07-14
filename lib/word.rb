@@ -44,12 +44,7 @@ class Word
   end
 end
 
-#   define_method(:add_definition) do |new_definition|
-#     self.definition().push(new_definition)
-#     self
-#     self.merge(Word.new{()})
-#     end
-# end
+
 
 # class Word
 #

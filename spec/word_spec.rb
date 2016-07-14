@@ -48,14 +48,5 @@ describe(Word) do
       expect(Word.find(test_word.id())).to(eq(test_word.definition()))
     end
   end
-  #
-  #
-  # describe('#add_definition') do
-  #   it('adds an additional definition to a word') do
-  #     Dictionary.clear()
-  #     test_word = Dictionary.new({ :word => "liquid sunshine", :definition => ["Not sunshine"]})
-  #     expect((test_word.add_definition("definitely rain")).definition()).to(eq(["Not sunshine", "definitely rain"]))
-  #   end
-  # end
 
 end

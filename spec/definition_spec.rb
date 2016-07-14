@@ -4,9 +4,6 @@ require('definition')
 require('pry')
 
 describe(Definition) do
-  # before() do
-  #   Definition.clear()
-  # end
 
   describe('#initialize') do
     it('takes a definition, and returns that definition')do
@@ -15,6 +12,11 @@ describe(Definition) do
     end
   end
 
-
+  describe('#add_definition') do
+    it('adds an additional definition to a definition') do
+      test_definition = Definition.new({ :definition => "liquid sunshine"})
+      expect(test_definition.add_definition("definitely rain")).to(eq(["liquid sunshine", "definitely rain"]))
+    end
+  end
 
 end
