@@ -32,22 +32,22 @@ describe(Word) do
   end
 
   describe('#save') do
-    it('adds a word to the list of all definitions') do
+    it('adds a word to the list of all words') do
     test_word = Word.new({ :word => "liquid sunshine", :definition => (Definition.new({:definition => "Not sunshine"}))})
     test_word.save()
     expect(Word.all()).to(eq([test_word]))
     end
   end
-  #
-  # describe('.find') do
-  #   it('returns a definition for a word') do
-  #     test_word = Dictionary.new({ :word => "liquid sunshine", :definition => ["Not sunshine"]})
-  #     test_word.save()
-  #     test_word2 = Dictionary.new({ :word => "swoosh life", :definition => ["I work all the time, but my company makes me think it's cool"]})
-  #     test_word2.save()
-  #     expect(Dictionary.find(test_word.id())).to(eq(test_word))
-  #   end
-  # end
+
+  describe('.find') do
+    it('returns a definition for a word') do
+      test_word = Word.new({ :word => "liquid sunshine", :definition => (Definition.new({:definition => "Not sunshine"}))})
+      test_word.save()
+      test_word2 = Word.new({ :word => "swoosh life", :definition => (Definition.new({:definition => "Working a lot in cool shoes"}))})
+      test_word2.save()
+      expect(Word.find(test_word.id())).to(eq(test_word.definition()))
+    end
+  end
   #
   #
   # describe('#add_definition') do
