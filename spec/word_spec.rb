@@ -25,19 +25,19 @@ describe(Word) do
     end
   end
 
-  # describe('.all') do
-  #   it('returns an empty array for all words at first') do
-  #     expect(Dictionary.all()).to(eq([]))
-  #   end
-  # end
-  #
-  # describe('#save') do
-  #   it('adds a word to the list of all definitions') do
-  #   test_word = Dictionary.new({ :word => "liquid sunshine", :definition => ["Not sunshine"]})
-  #   test_word.save()
-  #   expect(Dictionary.all()).to(eq([test_word]))
-  #   end
-  # end
+  describe('.all') do
+    it('returns an empty array for all words at first') do
+      expect(Word.all()).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it('adds a word to the list of all definitions') do
+    test_word = Word.new({ :word => "liquid sunshine", :definition => (Definition.new({:definition => "Not sunshine"}))})
+    test_word.save()
+    expect(Word.all()).to(eq([test_word]))
+    end
+  end
   #
   # describe('.find') do
   #   it('returns a definition for a word') do
