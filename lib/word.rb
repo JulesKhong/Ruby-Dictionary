@@ -24,24 +24,24 @@ class Word
   end
 
   define_singleton_method(:find) do |id|
-    found_definition = nil
+    found_word = nil
     @@words.each() do |word|
-      if word.id.eql?(id)
-      found_definition = word.definition
+      if word.id().eql?(id)
+      found_word = word
       end
     end
-    found_definition
+    found_word
   end
 
-  define_singleton_method(:find_word) do |word|
-    word_found = nil
-    @@words.each() do |dictionary_entry|
-      if dictionary_entry.word().eql?(word)
-        word_found = dictionary_entry
-      end
-    end
-    word_found
-  end
+  # define_singleton_method(:find_word) do |word|
+  #   word_found = nil
+  #   @@words.each() do |dictionary_entry|
+  #     if dictionary_entry.word().eql?(word)
+  #       word_found = dictionary_entry
+  #     end
+  #   end
+  #   word_found
+  # end
 end
 
 

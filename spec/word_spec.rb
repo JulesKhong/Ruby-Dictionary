@@ -41,11 +41,12 @@ describe(Word) do
 
   describe('.find') do
     it('returns a definition for a word') do
+      Word.clear()
       test_word = Word.new({ :word => "liquid sunshine", :definition => (Definition.new({:definition => "Not sunshine"}))})
       test_word.save()
-      test_word2 = Word.new({ :word => "swoosh life", :definition => (Definition.new({:definition => "Working a lot in cool shoes"}))})
-      test_word2.save()
-      expect(Word.find(test_word.id())).to(eq(test_word.definition()))
+      test_word_two = Word.new({ :word => "swoosh life", :definition => (Definition.new({:definition => "Working a lot in cool shoes"}))})
+      test_word_two.save()
+      expect(Word.find(1)).to(eq(test_word))
     end
   end
 
