@@ -11,21 +11,25 @@ get('/') do
 end
 
 post('/definition') do
-  word = params.fetch('word_input')
-  @definition = params.fetch('definition_input')
-  dictionary_entry = Dictionary.new({:word => word, :definition => [@definition]})
-  dictionary_entry.save()
+  @definition = Definition.new({:definition => [params.fetch('definition_input')]})
+  @word = Word.new({:word => (params.fetch('word_input')), :definition => @definition})
   erb(:success)
 end
 
 get('/definition/:id') do
-  @definition = Dictionary.find(params.fetch("id").to_i())
+  @definition = Word.find(params.fetch("id").to_i())
   erb(:definition)
 end
 
-post('/definition/new') do
-  @new_definition = params.fetch('new_definition_input')
-  @definition_hash = Dictionary.find_word(params.fetch('word'))
-  (@definition_hash).add_definition(@new_definition)
-  erb(:success)
-end
+# post('/definition/new') do
+#   new_definition = params.fetch('new_definition_input')
+#   word = Word.find_word(params.fetch('word'))
+#   word.add_definition(new_definition)
+#   erb(:success)
+# end
+# post('/definition/new') do
+#   @new_definition = params.fetch('new_definition_input')
+#   @definition_hash = Dictionary.find_word(params.fetch('word'))
+#   (@definition_hash).add_definition(@new_definition)
+#   erb(:success)
+# end
