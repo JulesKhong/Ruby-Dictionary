@@ -45,20 +45,17 @@ describe('reveals definitions',{ :type => :feature }) do
     expect(page).to have_content('the northwest equivalent of "god bless you"')
   end
 end
-#
-# describe('adds definition to a word',{ :type => :feature}) do
-#   it("allows users to add additional definitions to a word") do
-#     visit('/')
-#     fill_in('word_input', :with => 'liquid sunshine')
-#     fill_in('definition_input', :with => 'Not sunshine')
-#     click_button('Submit')
-#     expect(page).to have_content('See all entries')
-#     click_link('See all entries')
-#     expect(page).to have_content('liquid sunshine')
-#     click_link('liquid sunshine')
-#     expect(page).to have_content('Additional Definition')
-#     fill_in('new_definition_input', :with => 'Definitely rain')
-#     click_button('Submit')
-#     expect(page).to have_content('Browse')
-#   end
-# end
+
+describe('adds definition to a word',{ :type => :feature}) do
+  it("allows users to add additional definitions to a word") do
+    visit('/')
+    fill_in('word_input', :with => 'liquid sunshine')
+    fill_in('definition_input', :with => 'Not sunshine')
+    click_button('Submit')
+    click_link('See all entries')
+    click_link('liquid sunshine')
+    fill_in('new_definition_input', :with => 'Definitely rain')
+    click_button('Submit')
+    expect(page).to have_content('Browse')
+  end
+end

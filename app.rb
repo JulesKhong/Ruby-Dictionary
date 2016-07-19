@@ -18,23 +18,15 @@ post('/definition') do
 end
 
 get('/definition/:id') do
-  word = Word.find(params.fetch("id").to_i())
-  @word = params.fetch("word")
-  @definition = params.fetch("definition")
+  @word = Word.find(params.fetch("id").to_i())
   erb(:definition)
 end
 
-# post('/definition/new') do
-#   new_definition = params.fetch('new_definition_input')
-#   word = Word.find_word(params.fetch('word'))
-#   new_word = word.definition.add_definition(new_definition)
-#   binding.pry
-#   erb(:success)
-# end
-
-# post('/definition/new') do
-#   @new_definition = params.fetch('new_definition_input')
-#   @definition_hash = Dictionary.find_word(params.fetch('word'))
-#   (@definition_hash).add_definition(@new_definition)
-#   erb(:success)
-# end
+post('/definition/new') do
+  new_definition = params.fetch('new_definition_input')
+  word_id = params.fetch('word').to_i
+  @word = Word.find(word_id)
+  (@word.definition).add_definition(new_definition)
+  @all_words = Word.all()
+  erb(:index)
+end

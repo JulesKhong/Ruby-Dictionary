@@ -17,7 +17,7 @@ This site allows users to see and add words to a dictionary of Pacific NW specif
 
 ## Known Bugs
 
-The backend logic passes all spec tests, but the page will not load on or pass integration tests.
+There are no known bugs.
 
 ## Support and contact details
 
