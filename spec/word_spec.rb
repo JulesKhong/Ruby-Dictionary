@@ -50,4 +50,13 @@ describe(Word) do
     end
   end
 
+  describe('#add_def') do
+    it('adds a definition to a word') do
+      test_word = Word.new({ :word => "liquid sunshine", :definition => (Definition.new({:definition => "Not sunshine"}))})
+      test_word.add_def("Definitely rain")
+      test_word.save()
+      expect(test_word.definition.definition).to(eq(["Not sunshine", "Definitely rain"]))
+    end
+  end
+
 end

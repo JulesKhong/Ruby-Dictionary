@@ -33,13 +33,7 @@ class Word
     found_word
   end
 
-  define_singleton_method(:find_word) do |word|
-    word_found = nil
-    @@words.each() do |dictionary_entry|
-      if dictionary_entry.word().eql?(word)
-        word_found = dictionary_entry
-      end
-    end
-    word_found
+  define_method(:add_def) do |new_def|
+  (self.definition).add_definition(new_def)
   end
 end

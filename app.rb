@@ -26,7 +26,7 @@ post('/definition/new') do
   new_definition = params.fetch('new_definition_input')
   word_id = params.fetch('word').to_i
   @word = Word.find(word_id)
-  (@word.definition).add_definition(new_definition)
+  @word.add_def(new_definition)
   @all_words = Word.all()
   erb(:index)
 end
