@@ -10,9 +10,8 @@ describe(Word) do
 
   describe('#initialize') do
     it('takes a word, and returns that word')do
-      test_word = Word.new({ :word => "liquid sunshine", :definition => ["Not sunshine"]})
+      test_word = Word.new({ :word => "liquid sunshine"})
       expect(test_word.word()).to(eq("liquid sunshine"))
-      expect(test_word.definition()).to eq(["Not sunshine"])
     end
   end
 
@@ -52,10 +51,13 @@ describe(Word) do
 
   describe('#add_def') do
     it('adds a definition to a word') do
-      test_word = Word.new({ :word => "liquid sunshine", :definition => (Definition.new({:definition => "Not sunshine"}))})
-      test_word.add_def("Definitely rain")
+      test_word = Word.new({ :word => "liquid sunshine"})
+      definition = Definition.new({:definition => "Not sunshine"})
+      definition2 = Definition.new({:definition => "Definitely rain"})
       test_word.save()
-      expect(test_word.definition.definition).to(eq(["Not sunshine", "Definitely rain"]))
+      test_word.add_def(definition)
+      test_word.add_def(definition2)
+      expect(test_word.definition).to(eq([definition, definition2]))
     end
   end
 

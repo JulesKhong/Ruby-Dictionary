@@ -2,12 +2,11 @@ require('pry')
 
 class Word
   attr_reader( :id, :word, :definition)
-
   @@words = []
 
   define_method(:initialize) do | attributes |
     @word = attributes.fetch(:word)
-    @definition = attributes.fetch(:definition)
+    @definition = []
     @id = @@words.length().+(1)
   end
 
@@ -34,6 +33,6 @@ class Word
   end
 
   define_method(:add_def) do |new_def|
-  (self.definition).add_definition(new_def)
+  self.definition.push(new_def)
   end
 end

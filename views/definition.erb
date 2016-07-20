@@ -8,8 +8,8 @@
   <form class="form-group" action="/definition/new" method="post">
     <input type="hidden" name="word" value ="<%= @word.id %>">
     <h2><%= @word.word() %>:</h2>
-    <% @word.definition.definition.each do |meaning|%>
-    <h2><%= meaning %></h2>
+    <% @word.definition.each do |meaning|%>
+    <h2><%= meaning.definition %></h2>
     <% end %>
     <label for="new_definition_input">Additional Definition</label>
     <textarea class="form-control" name="new_definition_input" rows="3"></textarea>
